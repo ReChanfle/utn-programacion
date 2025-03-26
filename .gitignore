@@ -1,5 +1,9 @@
+# Ignorar archivos de configuración de JetBrains (.idea/)
+.idea/
+
 # Prerequisites
 *.d
+
 
 # Compiled Object files
 *.slo
