@@ -8,7 +8,7 @@ Hacer un programa para ingresar cinco números y listar el máximo y el mínimo 
 int main(){
 
     int number_1{0}, number_2{0}, number_3{0}, number_4{0}, number_5{0};
-    int aux{0};
+    int aux_max{0},aux_min{0};
 
     cout << "Ingrese un numero:" << endl;
     cin >> number_1;
@@ -21,19 +21,34 @@ int main(){
     cout << "Ingrese quinto numero:" << endl;
     cin >> number_5;
 
-    if(number_1 > number_2)
-        aux = number_1;
-    else
-        aux = number_2;
-    if(aux < number_3)
-        aux = number_3;
-    if(aux < number_4)
-      aux = number_4;
-    if(aux < number_5)
-      aux = number_5;
+    if(number_1 > number_2) {
+        aux_max = number_1;
+        aux_min = number_2;
+    }
+    else {
+      aux_max = number_2;
+        aux_min = number_1;
+    }
+    if(aux_max < number_3) {
+      aux_max = number_3;
+      if(aux_min > number_3)
+         aux_min = number_3;
+    }
 
+    if(aux_max < number_4) {
+      aux_max = number_4;
+      if(aux_min > number_4)
+        aux_min = number_4;
+    }
 
-    cout << "El numero mayor es:" << aux << endl;
+    if(aux_max < number_5) {
+      aux_max = number_5;
+      if(aux_min > number_5)
+        aux_min = number_5;
+    }
+
+    cout << "El numero mayor es:" << aux_max << endl;
+    cout << "El numero menor es:" << aux_min << endl;
 
 
   return 0;
