@@ -13,22 +13,25 @@ Para resolver este ejercicio sugerimos resolver antes el TP2 EJ 9 y TP2 EJ 10.
 
 int main(){
 
-    int aux{0}, aux_1{0};
+    int aux{0};
+    bool first = false;
 
     for (int i = 1; i <= 10; i++) {
         int number_input{0};
         cout << "Ingrese un numero: " << endl;
         cin >> number_input;
-        if(number_input < aux)
-          aux = number_input;
 
-        if(number_input > aux_1)
-          aux_1 = number_input
+        if (number_input < 0 && !first) {
+            aux = number_input;
+            first = true;
+        }
+
+        if(number_input > aux)
+         aux = number_input;
 
     }
 
-
-
+    cout << "Numero Maximo: " << aux << endl;
 
     return 0;
 
