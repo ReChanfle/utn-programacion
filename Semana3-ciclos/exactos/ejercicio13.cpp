@@ -11,7 +11,26 @@ Ejemplo C: -5, -13, -20, -8, -55, -13, -55, -14, -15, -20 se informa máximo: -8
 
 int main(){
 
+    int max_par{0};
 
+    for (int i = 0;i<10;i++) {
+        int number{0};
+        cout << "Ingrese un numero: " << endl;
+        cin >> number;
+
+        if (number % 2 == 0) {
+
+            if (number < 0 && max_par == 0)
+                max_par = number;
+
+            if (number > max_par)
+                max_par = number;
+        }
+
+
+    }
+
+    cout << "El numero maximo de los pares es: " << max_par << endl;
 
     return 0;
 
