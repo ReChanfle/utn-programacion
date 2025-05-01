@@ -15,7 +15,7 @@ Ejemplo E: -100, -20, -5, 15, -70, el resultado será 15 y -5.
 
 int main(){
 
-    bool first_number{true};
+    bool first_number{true}, second_number{true};
     int number_1{0}, number_2{0};
 
     for(int i = 0; i < 5; i++) {
@@ -30,11 +30,15 @@ int main(){
             first_number = false;
         }
 
-        if(number > number_1){
+        if(second_number && i > 0){
+            number_2 = number;
+            second_number = false;
+        }
+
+        if(number > number_1)
             number_1 = number;
 
-        }
-        if (number < number_1)
+        if (number < number_1 && number > number_2)
             number_2 = number;
 
 
