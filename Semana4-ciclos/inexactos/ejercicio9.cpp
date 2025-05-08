@@ -3,10 +3,12 @@ using namespace std;
 
 /*
 Hacer un programa para ingresar una lista de números que finaliza cuando se ingresa un cero,
-luego informar el máximo.
-Ejemplo A: 5, 10, 20, 8, 25, 13, 35, -8, -5, 20, 0. Se listará Máximo 35.
-Ejemplo B: 5, 10, 20, 8, 55, 13, 55, -8, -5, 20, 0. Se listará Máximo 55.
-Ejemplo C: -15, -10, -20, -8, -55, -13, -55, -8, -5, -20, 0. Se listará Máximo -5.
+luego informar el máximo de los pares.
+
+Ejemplo A: 2, 10, 20, 8, 25, 13, 36, -8, -5, 20, 0. Se listará Máximo 36.
+Ejemplo B: 5, -13, 23, 81, -55, -13, 55, 4, 15, -20, 0. Se listará Máximo 4.
+Ejemplo C: -5, -13, -20, -8, -55, -13, -55, -14, -15, -20, 0. Se listará Máximo -8.
+
  */
 
 
@@ -26,7 +28,7 @@ int main() {
             first_number = false;
         }
 
-        if (max <= number && number != 0) {
+        if (max <= number && number != 0 && number % 2 == 0) {
             max = number;
             cout << max << endl;
 
