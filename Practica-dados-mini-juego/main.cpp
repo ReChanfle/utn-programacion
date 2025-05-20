@@ -97,13 +97,13 @@ void checkMaxNumberPerDice(int dice1[], int dice2[], int wins_rounds_player1[],i
 void showWinnerPerRound(int wins_rounds_player1[], int wins_rounds_player2[]) {
 
     for(int i = 0; i <= 5; i++) {
-        cout << wins_rounds_player1[i] << endl;
+        //cout << wins_rounds_player1[i] << endl;
         if(wins_rounds_player1[i] > wins_rounds_player2[i])
-            cout << "El jugador 1 gana la ronda " << i+1 << endl;
+            cout << "El jugador gana la ronda: " << i+1 << endl;
         else if(wins_rounds_player2[i] > wins_rounds_player1[i])
-            cout << "El jugador 2 gana la ronda " << i+1 << endl;
+            cout << "El CPU gana la ronda: " << i+1 << endl;
         else
-            cout << "Empate en la ronda " << i+1 << endl;
+            cout << "Empate en la ronda: " << i+1 << endl;
     }
 
 }
@@ -132,11 +132,10 @@ int main() {
                         rollDice(dice1, dice2);
                     }
 
-
                     findMaxNumber(dice1, dice2, points_player1, points_player2);
                    checkMaxNumberPerDice(dice1, dice2, wins_rounds_player1, wins_rounds_player2);
                 } while (points_player1 <= 25 && points_player2 <= 25);
-                cout << "El jugador 1 tiene: " << points_player1 << endl;
+                cout << "El jugador tiene: " << points_player1 << endl;
                 cout << "El CPU tiene: " << points_player2 << endl;
                 cout << "El numero de rondas es: " << cont_rounds << endl;
                 options(select,player1);
